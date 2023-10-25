@@ -10,10 +10,11 @@ const reset = document.getElementById("resetButton");
 let startTime ;
 let stopTime = 0;
 let interval;
+let timelag = new Date().getTimezoneOffset()/60;
 
 function nowDispTime(){
   const nowTime = new Date(Date.now() - startTime + stopTime);
-  const h = String(nowTime.getHours()-9);//.padStart(2,"0");
+  const h = String(nowTime.getHours()+timelag);//.padStart(2,"0");
   const m = String(nowTime.getMinutes());//.padStart(2,"0");
   const s = String(nowTime.getSeconds());//.padStart(2,"0");
   const f = String(nowTime.getMilliseconds()).padStart(3,"0").slice(0,1);
