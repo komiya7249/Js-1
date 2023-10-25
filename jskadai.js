@@ -13,9 +13,9 @@ let interval;
 
 function nowDispTime(){
   const nowTime = new Date(Date.now() - startTime + stopTime);
-  const h = String(nowTime.getHours()-9).padStart(2,"0").slice(1,2);
-  const m = String(nowTime.getMinutes()).padStart(2,"0").slice(1,2);
-  const s = String(nowTime.getSeconds()).padStart(2,"0").slice(1,2);
+  const h = String(nowTime.getHours()-9);//.padStart(2,"0");
+  const m = String(nowTime.getMinutes());//.padStart(2,"0");
+  const s = String(nowTime.getSeconds());//.padStart(2,"0");
   const f = String(nowTime.getMilliseconds()).padStart(3,"0").slice(0,1);
   
   hours.textContent = h;
@@ -51,5 +51,6 @@ function resetButton(){
   minutes.textContent = "0";
   seconds.textContent = "0";
   milli.textContent = "0";
+  clearInterval(interval);
 };
 
